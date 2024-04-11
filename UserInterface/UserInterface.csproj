@@ -1,0 +1,1067 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{45EDECED-2091-4DF9-ADDD-B751FC761014}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UserInterface</RootNamespace>
+    <AssemblyName>UserInterface</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GoLibrary, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Data Structure\Database DLL\GoLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add Project\AddProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\AddProject.designer.cs">
+      <DependentUpon>AddProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\AvailableTeamLeaders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\AvailableTeamLeaders.designer.cs">
+      <DependentUpon>AvailableTeamLeaders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\ChooseProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\ChooseProject.designer.cs">
+      <DependentUpon>ChooseProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\ChooseProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\ChooseProjectForm.Designer.cs">
+      <DependentUpon>ChooseProjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\CustomDateTime.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\FileAttachment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\FileAttachment.designer.cs">
+      <DependentUpon>FileAttachment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\LatestUpgradedVersion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\LatestUpgradedVersion.designer.cs">
+      <DependentUpon>LatestUpgradedVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\NoResultFound.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\NoResultFound.designer.cs">
+      <DependentUpon>NoResultFound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\PDFAttachment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\PDFAttachment.designer.cs">
+      <DependentUpon>PDFAttachment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\ProfilePictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\RippleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\SelectedTeamLeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\SelectedTeamLeader.designer.cs">
+      <DependentUpon>SelectedTeamLeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\SelectProjectTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\SelectProjectTemplate.Designer.cs">
+      <DependentUpon>SelectProjectTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\SingleProjectSelectTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\SingleProjectSelectTemplate.Designer.cs">
+      <DependentUpon>SingleProjectSelectTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\TeamLeaderPicAndName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\TeamLeaderPicAndName.designer.cs">
+      <DependentUpon>TeamLeaderPicAndName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\TeamLeaderPicAndNameVertical.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\Custom Control\TeamLeaderPicAndNameVertical.designer.cs">
+      <DependentUpon>TeamLeaderPicAndNameVertical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\ProjectInitializationPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\ProjectInitializationPage.designer.cs">
+      <DependentUpon>ProjectInitializationPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Project\VersionUpgrade.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Add Project\VersionUpgrade.designer.cs">
+      <DependentUpon>VersionUpgrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BorderGraphicsPath.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Deploy\DeployContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Deploy\DeployContent.Designer.cs">
+      <DependentUpon>DeployContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Deploy\DownloadBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Deploy\ProfilePicAndNameSquare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Deploy\ProfilePicAndNameSquare.Designer.cs">
+      <DependentUpon>ProfilePicAndNameSquare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Deploy\UcDeploy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Deploy\UcDeploy.Designer.cs">
+      <DependentUpon>UcDeploy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Notification\NotificationContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Notification\NotificationContent.Designer.cs">
+      <DependentUpon>NotificationContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Notification\UcNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Notification\UcNotification.Designer.cs">
+      <DependentUpon>UcNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\MilestoneAndDateTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\MilestoneAndDateTemplate.Designer.cs">
+      <DependentUpon>MilestoneAndDateTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\MilestoneDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\MilestoneDetailsForm.Designer.cs">
+      <DependentUpon>MilestoneDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\MilestoneLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\MilestoneLabel.Designer.cs">
+      <DependentUpon>MilestoneLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\MilestoneView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\MilestoneView.Designer.cs">
+      <DependentUpon>MilestoneView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\Overview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\Overview.Designer.cs">
+      <DependentUpon>Overview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\OverviewContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\OverviewContent.Designer.cs">
+      <DependentUpon>OverviewContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\OverviewDropDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\OverviewDropDownForm.Designer.cs">
+      <DependentUpon>OverviewDropDownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\OverviewMilestoneContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\OverviewMilestoneContent.Designer.cs">
+      <DependentUpon>OverviewMilestoneContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\SingleMilestone.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\StartPathAndDate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\TaskCompletionProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\Overview\TaskCompletionProgressBar.Designer.cs">
+      <DependentUpon>TaskCompletionProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\ProjectManagerHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Project Manager\ProjectManagerHome.Designer.cs">
+      <DependentUpon>ProjectManagerHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\On Stage\AddMilestoneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\On Stage\AddMilestoneForm.Designer.cs">
+      <DependentUpon>AddMilestoneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\On Stage\CustomDatetimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\On Stage\UCOnStage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\On Stage\UCOnStage.Designer.cs">
+      <DependentUpon>UCOnStage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\On Stage\UcMilestone.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\On Stage\UcMilestone.Designer.cs">
+      <DependentUpon>UcMilestone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\Report\FilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\Report\FilterForm.Designer.cs">
+      <DependentUpon>FilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\Report\MonthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\Report\MonthForm.Designer.cs">
+      <DependentUpon>MonthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\Report\PriorityDropDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\Report\PriorityDropDownForm.Designer.cs">
+      <DependentUpon>PriorityDropDownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\Report\ReportContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\Report\ReportContent.Designer.cs">
+      <DependentUpon>ReportContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\Report\ReportTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\Report\ReportTemplate.Designer.cs">
+      <DependentUpon>ReportTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\TeamLeadHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Lead\TeamLeadHome.Designer.cs">
+      <DependentUpon>TeamLeadHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Team Member\Milestone\CurrentMilestone.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Member\Milestone\CurrentMilestone.Designer.cs">
+      <DependentUpon>CurrentMilestone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Team Member\Task\TaskContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Member\Task\TaskContent.Designer.cs">
+      <DependentUpon>TaskContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home Page\Team Member\TeamMemberHome.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Home Page\Team Member\TeamMemberHome.Designer.cs">
+      <DependentUpon>TeamMemberHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginPage\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage\Logo\LogoAnimation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoginPage\Logo\LogoAnimation.Designer.cs">
+      <DependentUpon>LogoAnimation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage\TextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoginPage\TextBox.designer.cs">
+      <DependentUpon>TextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notification Manager\CloseButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Notification Manager\FullContentViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notification Manager\FullContentViewForm.designer.cs">
+      <DependentUpon>FullContentViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notification Manager\NotificationManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Notification Manager\NotificationTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notification Manager\NotificationTemplate.designer.cs">
+      <DependentUpon>NotificationTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Project Manager Main Page\PageButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Project Manager Main Page\PageButton.Designer.cs">
+      <DependentUpon>PageButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project Manager Main Page\ProfilePicAndName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Project Manager Main Page\ProfilePicAndName.designer.cs">
+      <DependentUpon>ProfilePicAndName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project Manager Main Page\ProjectManagerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project Manager Main Page\ProjectManagerMainForm.Designer.cs">
+      <DependentUpon>ProjectManagerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project Manager Main Page\SignOutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Project Manager Main Page\SignOutForm.Designer.cs">
+      <DependentUpon>SignOutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task\AddTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Task\AddTask.Designer.cs">
+      <DependentUpon>AddTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Task\CreateTask\AnimatedLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Task\CreateTask\CreateTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Task\CreateTask\CreateTaskForm.Designer.cs">
+      <DependentUpon>CreateTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Task\CreateTask\MilestoneDropDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Task\CreateTask\MilestoneDropDownForm.Designer.cs">
+      <DependentUpon>MilestoneDropDownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Task\CreateTask\PriorityDropDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Task\CreateTask\PriorityDropDownForm.Designer.cs">
+      <DependentUpon>PriorityDropDownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Task\CreateTask\TeamMembersListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Task\CreateTask\TeamMembersListForm.Designer.cs">
+      <DependentUpon>TeamMembersListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Task\CreateTask\UcCreateTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Task\CreateTask\UcCreateTask.Designer.cs">
+      <DependentUpon>UcCreateTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Task\Timeline\CurrentTimelineContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Task\Timeline\CurrentTimelineContent.Designer.cs">
+      <DependentUpon>CurrentTimelineContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Task\Timeline\TimelineTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Task\Timeline\TimelineTask.designer.cs">
+      <DependentUpon>TimelineTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcNotFound.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcNotFound.Designer.cs">
+      <DependentUpon>UcNotFound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\CircleDownloadBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\CircleDownloadBtn.Designer.cs">
+      <DependentUpon>CircleDownloadBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\ProjectBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\ProjectBoard.designer.cs">
+      <DependentUpon>ProjectBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\SourceCodeSubmitionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\SourceCodeSubmitionForm.Designer.cs">
+      <DependentUpon>SourceCodeSubmitionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\TaskInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\TaskInfoForm.Designer.cs">
+      <DependentUpon>TaskInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UcDueDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UcDueDate.Designer.cs">
+      <DependentUpon>UcDueDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UCTaskBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UCTaskBoard.designer.cs">
+      <DependentUpon>UCTaskBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UcTaskBoardBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UcTaskBoardBase.Designer.cs">
+      <DependentUpon>UcTaskBoardBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UcTaskCommits.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UcTaskCommits.Designer.cs">
+      <DependentUpon>UcTaskCommits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UcTaskCommitsHead.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UcTaskCommitsHead.Designer.cs">
+      <DependentUpon>UcTaskCommitsHead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UcTaskDescription.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UcTaskDescription.Designer.cs">
+      <DependentUpon>UcTaskDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UCTaskStatusBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UCTaskStatusBase.Designer.cs">
+      <DependentUpon>UCTaskStatusBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UcTaskStatusHead.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\BoardView\UcTaskStatusHead.Designer.cs">
+      <DependentUpon>UcTaskStatusHead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\ListView\CustomDonutChart.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewPage\ListView\DoneCardTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\ListView\DoneCardTemplate.Designer.cs">
+      <DependentUpon>DoneCardTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\ListView\ListViewTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\ListView\ListViewTemplate.Designer.cs">
+      <DependentUpon>ListViewTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\ListView\SingleList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewPage\ListView\SingleList.Designer.cs">
+      <DependentUpon>SingleList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\ListView\StatusChangeWarningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPage\ListView\StatusChangeWarningForm.Designer.cs">
+      <DependentUpon>StatusChangeWarningForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPage\ListView\StatusDropDown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPage\ListView\StatusDropDown.designer.cs">
+      <DependentUpon>StatusDropDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProject\BoardView\BoardViewContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewProject\BoardView\BoardViewContent.Designer.cs">
+      <DependentUpon>BoardViewContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProject\BoardView\Custom Controls\BoardViewTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewProject\BoardView\Custom Controls\BoardViewTemplate.Designer.cs">
+      <DependentUpon>BoardViewTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProject\BoardView\Custom Controls\StatusViewTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewProject\BoardView\Custom Controls\StatusViewTemplate.Designer.cs">
+      <DependentUpon>StatusViewTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProject\BoardView\ProjectInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewProject\BoardView\ProjectInfoForm.Designer.cs">
+      <DependentUpon>ProjectInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProject\EmployeeProfilePicAndName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewProject\EmployeeProfilePicAndName.Designer.cs">
+      <DependentUpon>EmployeeProfilePicAndName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProject\TimelineView\Controls\TaskTimelineTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewProject\TimelineView\Controls\TaskTimelineTemplate.Designer.cs">
+      <DependentUpon>TaskTimelineTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProject\TimelineView\Controls\TimelineMilestoneLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewProject\TimelineView\Controls\TimelineMilestoneLabel.Designer.cs">
+      <DependentUpon>TimelineMilestoneLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProject\TimelineView\Controls\TimelinePaginate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewProject\TimelineView\Controls\TimelinePaginate.Designer.cs">
+      <DependentUpon>TimelinePaginate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProject\TimelineView\Controls\VerticalLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewProject\TimelineView\Controls\VerticalLabel.Designer.cs">
+      <DependentUpon>VerticalLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProject\TimelineView\TimelineView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewProject\TimelineView\TimelineView.Designer.cs">
+      <DependentUpon>TimelineView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProject\VersionViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewProject\VersionViewForm.Designer.cs">
+      <DependentUpon>VersionViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewProject\ViewProjectTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewProject\ViewProjectTemplate.Designer.cs">
+      <DependentUpon>ViewProjectTemplate.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Add Project\AddProject.resx">
+      <DependentUpon>AddProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\Custom Control\AvailableTeamLeaders.resx">
+      <DependentUpon>AvailableTeamLeaders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\Custom Control\ChooseProject.resx">
+      <DependentUpon>ChooseProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\Custom Control\ChooseProjectForm.resx">
+      <DependentUpon>ChooseProjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\Custom Control\FileAttachment.resx">
+      <DependentUpon>FileAttachment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\Custom Control\LatestUpgradedVersion.resx">
+      <DependentUpon>LatestUpgradedVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\Custom Control\NoResultFound.resx">
+      <DependentUpon>NoResultFound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\Custom Control\PDFAttachment.resx">
+      <DependentUpon>PDFAttachment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\Custom Control\SelectedTeamLeader.resx">
+      <DependentUpon>SelectedTeamLeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\Custom Control\SelectProjectTemplate.resx">
+      <DependentUpon>SelectProjectTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\Custom Control\SingleProjectSelectTemplate.resx">
+      <DependentUpon>SingleProjectSelectTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\Custom Control\TeamLeaderPicAndName.resx">
+      <DependentUpon>TeamLeaderPicAndName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\Custom Control\TeamLeaderPicAndNameVertical.resx">
+      <DependentUpon>TeamLeaderPicAndNameVertical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\ProjectInitializationPage.resx">
+      <DependentUpon>ProjectInitializationPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Project\VersionUpgrade.resx">
+      <DependentUpon>VersionUpgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Deploy\DeployContent.resx">
+      <DependentUpon>DeployContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Deploy\DownloadBtn.resx">
+      <DependentUpon>DownloadBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Deploy\ProfilePicAndNameSquare.resx">
+      <DependentUpon>ProfilePicAndNameSquare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Deploy\UcDeploy.resx">
+      <DependentUpon>UcDeploy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Notification\NotificationContent.resx">
+      <DependentUpon>NotificationContent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Notification\UcNotification.resx">
+      <DependentUpon>UcNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Overview\MilestoneAndDateTemplate.resx">
+      <DependentUpon>MilestoneAndDateTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Overview\MilestoneDetailsForm.resx">
+      <DependentUpon>MilestoneDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Overview\MilestoneLabel.resx">
+      <DependentUpon>MilestoneLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Overview\MilestoneView.resx">
+      <DependentUpon>MilestoneView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Overview\Overview.resx">
+      <DependentUpon>Overview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Overview\OverviewContent.resx">
+      <DependentUpon>OverviewContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Overview\OverviewDropDownForm.resx">
+      <DependentUpon>OverviewDropDownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Overview\OverviewMilestoneContent.resx">
+      <DependentUpon>OverviewMilestoneContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\Overview\TaskCompletionProgressBar.resx">
+      <DependentUpon>TaskCompletionProgressBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Project Manager\ProjectManagerHome.resx">
+      <DependentUpon>ProjectManagerHome.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Team Lead\On Stage\AddMilestoneForm.resx">
+      <DependentUpon>AddMilestoneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Team Lead\On Stage\UCOnStage.resx">
+      <DependentUpon>UCOnStage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Team Lead\On Stage\UcMilestone.resx">
+      <DependentUpon>UcMilestone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Team Lead\Report\FilterForm.resx">
+      <DependentUpon>FilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Team Lead\Report\MonthForm.resx">
+      <DependentUpon>MonthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Team Lead\Report\PriorityDropDownForm.resx">
+      <DependentUpon>PriorityDropDownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Team Lead\Report\ReportContent.resx">
+      <DependentUpon>ReportContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Team Lead\Report\ReportTemplate.resx">
+      <DependentUpon>ReportTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Team Lead\TeamLeadHome.resx">
+      <DependentUpon>TeamLeadHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Team Member\Milestone\CurrentMilestone.resx">
+      <DependentUpon>CurrentMilestone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Team Member\Task\TaskContent.resx">
+      <DependentUpon>TaskContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home Page\Team Member\TeamMemberHome.resx">
+      <DependentUpon>TeamMemberHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage\Logo\LogoAnimation.resx">
+      <DependentUpon>LogoAnimation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage\TextBox.resx">
+      <DependentUpon>TextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notification Manager\CloseButton.resx">
+      <DependentUpon>CloseButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notification Manager\FullContentViewForm.resx">
+      <DependentUpon>FullContentViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notification Manager\NotificationTemplate.resx">
+      <DependentUpon>NotificationTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project Manager Main Page\PageButton.resx">
+      <DependentUpon>PageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project Manager Main Page\ProfilePicAndName.resx">
+      <DependentUpon>ProfilePicAndName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project Manager Main Page\ProjectManagerMainForm.resx">
+      <DependentUpon>ProjectManagerMainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Project Manager Main Page\SignOutForm.resx">
+      <DependentUpon>SignOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Task\AddTask.resx">
+      <DependentUpon>AddTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Task\CreateTask\CreateTaskForm.resx">
+      <DependentUpon>CreateTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Task\CreateTask\MilestoneDropDownForm.resx">
+      <DependentUpon>MilestoneDropDownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Task\CreateTask\PriorityDropDownForm.resx">
+      <DependentUpon>PriorityDropDownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Task\CreateTask\TeamMembersListForm.resx">
+      <DependentUpon>TeamMembersListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Task\CreateTask\UcCreateTask.resx">
+      <DependentUpon>UcCreateTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Task\Timeline\CurrentTimelineContent.resx">
+      <DependentUpon>CurrentTimelineContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Task\Timeline\TimelineTask.resx">
+      <DependentUpon>TimelineTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcNotFound.resx">
+      <DependentUpon>UcNotFound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\BoardView\CircleDownloadBtn.resx">
+      <DependentUpon>CircleDownloadBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\BoardView\ProjectBoard.resx">
+      <DependentUpon>ProjectBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\BoardView\SourceCodeSubmitionForm.resx">
+      <DependentUpon>SourceCodeSubmitionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\BoardView\TaskInfoForm.resx">
+      <DependentUpon>TaskInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\BoardView\UcDueDate.resx">
+      <DependentUpon>UcDueDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\BoardView\UCTaskBoard.resx">
+      <DependentUpon>UCTaskBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\BoardView\UcTaskBoardBase.resx">
+      <DependentUpon>UcTaskBoardBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\BoardView\UcTaskCommits.resx">
+      <DependentUpon>UcTaskCommits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\BoardView\UcTaskCommitsHead.resx">
+      <DependentUpon>UcTaskCommitsHead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\BoardView\UcTaskDescription.resx">
+      <DependentUpon>UcTaskDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\BoardView\UCTaskStatusBase.resx">
+      <DependentUpon>UCTaskStatusBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\BoardView\UcTaskStatusHead.resx">
+      <DependentUpon>UcTaskStatusHead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\ListView\DoneCardTemplate.resx">
+      <DependentUpon>DoneCardTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\ListView\ListViewTemplate.resx">
+      <DependentUpon>ListViewTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\ListView\SingleList.resx">
+      <DependentUpon>SingleList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\ListView\StatusChangeWarningForm.resx">
+      <DependentUpon>StatusChangeWarningForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPage\ListView\StatusDropDown.resx">
+      <DependentUpon>StatusDropDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProject\BoardView\BoardViewContent.resx">
+      <DependentUpon>BoardViewContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProject\BoardView\Custom Controls\BoardViewTemplate.resx">
+      <DependentUpon>BoardViewTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProject\BoardView\Custom Controls\StatusViewTemplate.resx">
+      <DependentUpon>StatusViewTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProject\BoardView\ProjectInfoForm.resx">
+      <DependentUpon>ProjectInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProject\EmployeeProfilePicAndName.resx">
+      <DependentUpon>EmployeeProfilePicAndName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProject\TimelineView\Controls\TaskTimelineTemplate.resx">
+      <DependentUpon>TaskTimelineTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProject\TimelineView\Controls\TimelineMilestoneLabel.resx">
+      <DependentUpon>TimelineMilestoneLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProject\TimelineView\Controls\TimelinePaginate.resx">
+      <DependentUpon>TimelinePaginate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProject\TimelineView\Controls\VerticalLabel.resx">
+      <DependentUpon>VerticalLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProject\TimelineView\TimelineView.resx">
+      <DependentUpon>TimelineView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProject\VersionViewForm.resx">
+      <DependentUpon>VersionViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewProject\ViewProjectTemplate.resx">
+      <DependentUpon>ViewProjectTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\No Result.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Search File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data Structure\Data Structure.csproj">
+      <Project>{015ae303-5687-43df-a04b-1096ff57f937}</Project>
+      <Name>Data Structure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Manager\Manager.csproj">
+      <Project>{852f176d-8e38-4852-b2f9-7bed686da285}</Project>
+      <Name>Manager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Back Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Next Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Paginate Down Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Paginate Up Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Home Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Home Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Add Project Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Add Project.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\View Project Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\View Project.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Pdf Red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Zip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Filter.png" />
+    <None Include="Images\Board.png" />
+    <None Include="Images\Timeline.png" />
+    <None Include="Images\Version Milestone Status Down Down.png" />
+    <None Include="Images\Version Milestone Status Down.png" />
+    <None Include="Images\Version Milestone Status Equal.png" />
+    <None Include="Images\Version Milestone Status Up.png" />
+    <None Include="Images\CloudBlack.png" />
+    <None Include="Images\CloudHover.png" />
+    <None Include="Images\Board Click.png" />
+    <None Include="Images\Board Normal.png" />
+    <None Include="Images\Filter Click.png" />
+    <None Include="Images\Filter Normal.png" />
+    <None Include="Images\Timeline Click.png" />
+    <None Include="Images\Timeline Normal.png" />
+    <None Include="Images\download Icon.png" />
+    <Content Include="Resources\Attachment-black.png" />
+    <Content Include="Resources\Attachment-gray.png" />
+    <None Include="Resources\calendar black.png" />
+    <None Include="Resources\calendar light.png" />
+    <None Include="Resources\calendar 24x24.png" />
+    <None Include="Resources\calendar1.png" />
+    <Content Include="Resources\Close Black.png" />
+    <Content Include="Resources\close Hover.png" />
+    <Content Include="Resources\Close Red.png" />
+    <Content Include="Resources\Close.png" />
+    <None Include="Resources\CloudBlack.png" />
+    <None Include="Resources\CloudHover.png" />
+    <None Include="Resources\download.gif" />
+    <None Include="Resources\cloud uploaded.png" />
+    <None Include="Resources\Download Static.gif" />
+    <Content Include="Resources\flag-done.png" />
+    <Content Include="Resources\flag-empty.png" />
+    <Content Include="Resources\flag-NotStarted.png" />
+    <Content Include="Resources\flag-OnProcess.png" />
+    <Content Include="Resources\flag-stuck.png" />
+    <Content Include="Resources\flag-UnderReview.png" />
+    <None Include="Resources\icons8-upload-to-cloud-100.png" />
+    <Content Include="Resources\info-black.png" />
+    <Content Include="Resources\info-hover.png" />
+    <None Include="Resources\Line.png" />
+    <None Include="Resources\Not found.png" />
+    <Content Include="Resources\sort-down-hover.png" />
+    <Content Include="Resources\sort-down.png" />
+    <Content Include="Resources\sort-up-hover.png" />
+    <Content Include="Resources\sort-up.png" />
+    <None Include="Resources\Upload Cloud.gif" />
+    <Content Include="Resources\Zip Black.png" />
+    <Content Include="Resources\Zip red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Home Page\Custom Controls\" />
+    <Folder Include="Pugazh Images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

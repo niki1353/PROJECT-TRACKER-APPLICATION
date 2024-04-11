@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{589FF96E-BA15-4400-9793-56D18F85012E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TeamTracker</RootNamespace>
+    <AssemblyName>TeamTracker</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DatabaseLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Database DLL\DatabaseLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="GoLibrary, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Database DLL\GoLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Database DLL\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlBackup, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Database DLL\MySqlBackup.dll</HintPath>
+    </Reference>
+    <Reference Include="MySQLDatabase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Database DLL\MySQLDatabase.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Database DLL\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Create Project\AddProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create Project\AddProject.designer.cs">
+      <DependentUpon>AddProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\AvailableTeamLeaders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\AvailableTeamLeaders.designer.cs">
+      <DependentUpon>AvailableTeamLeaders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\ChooseProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\ChooseProject.designer.cs">
+      <DependentUpon>ChooseProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\FileAttachment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\FileAttachment.designer.cs">
+      <DependentUpon>FileAttachment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\LatestUpgradedVersion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\LatestUpgradedVersion.designer.cs">
+      <DependentUpon>LatestUpgradedVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\NoResultFound.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\NoResultFound.designer.cs">
+      <DependentUpon>NoResultFound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\PDFAttachment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\PDFAttachment.designer.cs">
+      <DependentUpon>PDFAttachment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\ProfilePictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\RippleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\SelectedTeamLeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\SelectedTeamLeader.designer.cs">
+      <DependentUpon>SelectedTeamLeader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\TeamLeaderPicAndName.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\TeamLeaderPicAndName.designer.cs">
+      <DependentUpon>TeamLeaderPicAndName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\TeamLeaderPicAndNameVertical.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create Project\Custom Controls\TeamLeaderPicAndNameVertical.designer.cs">
+      <DependentUpon>TeamLeaderPicAndNameVertical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Project\FileAttachment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create Project\FileAttachment.designer.cs">
+      <DependentUpon>FileAttachment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Project\ProjectInitializationPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create Project\ProjectInitializationPage.designer.cs">
+      <DependentUpon>ProjectInitializationPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Project\VersionUpgrade.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Create Project\VersionUpgrade.designer.cs">
+      <DependentUpon>VersionUpgrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Create Project\AddProject.resx">
+      <DependentUpon>AddProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Project\Custom Controls\AvailableTeamLeaders.resx">
+      <DependentUpon>AvailableTeamLeaders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Project\Custom Controls\ChooseProject.resx">
+      <DependentUpon>ChooseProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Project\Custom Controls\FileAttachment.resx">
+      <DependentUpon>FileAttachment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Project\Custom Controls\LatestUpgradedVersion.resx">
+      <DependentUpon>LatestUpgradedVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Project\Custom Controls\NoResultFound.resx">
+      <DependentUpon>NoResultFound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Project\Custom Controls\PDFAttachment.resx">
+      <DependentUpon>PDFAttachment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Project\Custom Controls\SelectedTeamLeader.resx">
+      <DependentUpon>SelectedTeamLeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Project\Custom Controls\TeamLeaderPicAndName.resx">
+      <DependentUpon>TeamLeaderPicAndName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Project\Custom Controls\TeamLeaderPicAndNameVertical.resx">
+      <DependentUpon>TeamLeaderPicAndNameVertical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Project\FileAttachment.resx">
+      <DependentUpon>FileAttachment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Project\ProjectInitializationPage.resx">
+      <DependentUpon>ProjectInitializationPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Project\VersionUpgrade.resx">
+      <DependentUpon>VersionUpgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data Structure\Data Structure.csproj">
+      <Project>{015ae303-5687-43df-a04b-1096ff57f937}</Project>
+      <Name>Data Structure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Manager\Manager.csproj">
+      <Project>{852f176d-8e38-4852-b2f9-7bed686da285}</Project>
+      <Name>Manager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\No Result.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Search File.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

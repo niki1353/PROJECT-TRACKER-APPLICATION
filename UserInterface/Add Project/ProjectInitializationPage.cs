@@ -1,0 +1,281 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Runtime.InteropServices;
+
+namespace TeamTracker
+{
+    public partial class ProjectInitializationPage : UserControl
+    {
+        private Employee teamLeader;
+
+        public ProjectInitializationPage()
+        {
+            InitializeComponent();
+            InitializePlaceHolders();
+        }
+
+        public void InitializePage()
+        {
+            
+            ucNotFound1.Visible = true;
+            startDateTimePicker.Value = endDateTimePicker.Value = DateTime.Now;
+            projectTitleTextBox.Text = "Project Name";
+            projectDescTextBox.Text = "Enter your Desc...";
+            clientTextBox.Text = "Client Email";
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            panel1.Invalidate();
+            panel2.Invalidate();
+            panel3.Invalidate();
+            panel4.Invalidate();
+            panel5.Invalidate();
+            panel6.Invalidate();
+            InitializeRoundedEdge();
+        }
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
+
+        private void InitializeRoundedEdge()
+        {
+            panel1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel1.Width, panel1.Height, 20, 20));
+            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 20, 20));
+            panel3.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel3.Width, panel3.Height, 20, 20));
+            panel4.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel4.Width, panel4.Height, 20, 20));
+            panel5.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel5.Width, panel5.Height, 20, 20));
+            panel6.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel6.Width, panel6.Height, 20, 20));
+            CreateProject.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, CreateProject.Width, CreateProject.Height, 10, 10));
+        }
+
+        private void ProjectEntryTablePanel_Paint(object sender, PaintEventArgs e)
+        {
+            Pen pen = new Pen(Color.FromArgb(39, 55, 77));
+            e.Graphics.DrawLine(pen, new Point(10, projectTitleTextBox.Location.Y + projectTitleTextBox.Height + 1), new Point(ProjectEntryTablePanel.Width - 10, projectTitleTextBox.Location.Y + projectTitleTextBox.Height + 1));
+            e.Graphics.DrawLine(pen, new Point(10, projectDescTextBox.Location.Y + projectDescTextBox.Height + 1), new Point(ProjectEntryTablePanel.Width - 10, projectDescTextBox.Location.Y + projectDescTextBox.Height + 1));
+            pen.Dispose();
+        }
+
+        private void ProjectEntryTablePanel_Resize(object sender, EventArgs e)
+        {
+            ProjectEntryTablePanel.Invalidate();
+        }
+
+        private void OnTeamLeaderClick(Employee employee)
+        {
+            selectedTeamLeader1.EmployeeProfile = employee;
+            teamLeader = employee;
+            selectedTeamLeader1.Visible = true;
+            availableTeamLeaders1.Visible = false;
+            ucNotFound1.Visible = false;
+        }
+
+        private void SelectedTeamLeader_OnChangeTeamLeader(object sender, EventArgs e)
+        {
+            teamLeader = null;
+            selectedTeamLeader1.Visible = false;
+            availableTeamLeaders1.Visible = true;
+            ucNotFound1.Visible = false;
+        }
+
+        private void InitializePlaceHolders()
+        {
+            projectDescTextBox.GotFocus += RemoveDescPlaceHolders;
+            projectDescTextBox.LostFocus += AddDescPlaceHolders;
+            projectTitleTextBox.GotFocus += RemoveTitlePlaceHolders;
+            projectTitleTextBox.LostFocus += AddTitlePlaceHolders;
+            clientTextBox.GotFocus += RemoveClientPlaceHolders;
+            clientTextBox.LostFocus += AddClientPlaceHolders;
+        }
+
+        private void AddClientPlaceHolders(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(clientTextBox.Text))
+                clientTextBox.Text = "Client Email";
+        }
+
+        private void RemoveClientPlaceHolders(object sender, EventArgs e)
+        {
+            if (clientTextBox.Text == "Client Email")
+            {
+                clientTextBox.Text = "";
+            }
+        }
+
+        private void AddTitlePlaceHolders(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(projectTitleTextBox.Text))
+                projectTitleTextBox.Text = "Project Name";
+        }
+
+        private void RemoveTitlePlaceHolders(object sender, EventArgs e)
+        {
+            if (projectTitleTextBox.Text == "Project Name")
+            {
+                projectTitleTextBox.Text = "";
+            }
+        }
+
+        private void AddDescPlaceHolders(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(projectDescTextBox.Text))
+                projectDescTextBox.Text = "Enter your Desc...";
+        }
+
+        private void RemoveDescPlaceHolders(object sender, EventArgs e)
+        {
+            if (projectDescTextBox.Text == "Enter your Desc...")
+            {
+                projectDescTextBox.Text = "";
+            }
+        }
+
+        private void OnDateValueChanged(object sender, EventArgs e)
+        {
+            if (VersionManager.CheckDate(startDateTimePicker.Value, endDateTimePicker.Value))
+            {
+                List<Employee> availableTL = EmployeeManager.FetchAvailableTeamLeaders(startDateTimePicker.Value, endDateTimePicker.Value);
+                if (availableTL.Count == 0)
+                {
+                    teamLeader = null;
+                    availableTeamLeaders1.Visible = false;
+                    selectedTeamLeader1.Visible = false;
+                    ucNotFound1.Visible = true;
+                }
+                else
+                {
+                    teamLeader = null;
+                    availableTeamLeaders1.TeamLeaders = availableTL;
+                    availableTeamLeaders1.Visible = true;
+                    selectedTeamLeader1.Visible = false;
+                    ucNotFound1.Visible = false;
+                }
+            }
+        }
+
+        private void OnCreateClick(object sender, EventArgs e)
+        {
+            if (EligibleForCreatingProject())
+            {
+                List<VersionAttachment> versions = FetchAttachmentFiles();
+                if (versions.Count > 0)
+                {
+                    ProjectManagerMainForm.notify.AddNotification("Warning", "Are You Sure you want to Add Project without Attachments?");
+                }
+                VersionManager.AddProject(projectTitleTextBox.Text, projectDescTextBox.Text, teamLeader.EmployeeID, startDateTimePicker.Value, endDateTimePicker.Value, clientTextBox.Text, versions);
+                ReInitializeComponents();
+            }
+        }
+
+        private bool EligibleForCreatingProject()
+        {
+            if (clientTextBox.Text == "" || !clientTextBox.Text.Contains("@gmail.com") || clientTextBox.Text == "Client Email")
+            {
+                ProjectManagerMainForm.notify.AddNotification("Project Creation Failed", "Invalid Input\nEnter Proper EmailID");
+                return false;
+            }
+
+            if (projectTitleTextBox.Text == "" ||  projectTitleTextBox.Text == "Project Name")
+            {
+                ProjectManagerMainForm.notify.AddNotification("Project Creation Failed", "Invalid Input\nEnter Project Name Properly");
+                return false;
+            }
+
+            if (projectDescTextBox.Text == "" || projectDescTextBox.Text == "Enter your Desc...")
+            {
+                ProjectManagerMainForm.notify.AddNotification("Project Creation Failed", "Invalid Input\nEnter Proper Description");
+                return false;
+            }
+
+            if (VersionManager.IsProjectNameAlreadyExist(projectTitleTextBox.Text))
+            {
+                ProjectManagerMainForm.notify.AddNotification("Project Creation Failed", "Project Name Already Exists\nYou can switch to Version Upgrade Page");
+                return false;
+            }
+
+            if (teamLeader == null)
+            {
+                ProjectManagerMainForm.notify.AddNotification("Project Creation Failed", "No Team Leaders Appointed");
+                return false;
+            }
+
+            if (!VersionManager.CheckDate(startDateTimePicker.Value, endDateTimePicker.Value))
+            {
+                ProjectManagerMainForm.notify.AddNotification("Project Creation Failed", "Invalid Input\nEnter Valid Project Date");
+                return false;
+            }
+
+            return true;
+        }
+
+        private List<VersionAttachment> FetchAttachmentFiles()
+        {
+            List<VersionAttachment> attachments = new List<VersionAttachment>();
+
+            foreach (var Iter in fileAttachment1.AttachmentCollection)
+            {
+                attachments.Add(Iter.Value);
+            }
+
+            if(attachments.Count > 0)
+            return attachments;
+            else { return null; }
+        }
+
+        public void ReInitializeComponents()
+        {
+            projectDescTextBox.Text = "Enter your Desc...";
+            projectTitleTextBox.Text = "Project Name";
+            clientTextBox.Text = "Client Email";
+            startDateTimePicker.Value = DateTime.Now;
+            endDateTimePicker.Value = DateTime.Now;
+            fileAttachment1.ClearAttachments = true;
+            ucNotFound1.Visible = true;
+            availableTeamLeaders1.Visible = false;
+            selectedTeamLeader1.Visible = false;
+        }
+
+        private void BorderDrawPaint(object sender, PaintEventArgs e)
+        {
+            Rectangle rec = new Rectangle(0, 0, (sender as Panel).Width-2, (sender as Panel).Height-2);
+            Pen border = new Pen(Color.FromArgb(221, 230, 237));
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            e.Graphics.DrawPath(border, BorderGraphicsPath.GetRoundRectangle(rec, 10));
+            border.Dispose();
+        }
+
+        private void TextBorderPanelPaint(object sender, PaintEventArgs e)
+        {
+            Pen border = new Pen(Color.FromArgb(3, 4, 94), 2);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            e.Graphics.DrawLine(border, new Point(projectTitleTextBox.Location.X, projectTitleTextBox.Location.Y + projectTitleTextBox.Height), new Point(projectTitleTextBox.Location.X + projectTitleTextBox.Width, projectTitleTextBox.Location.Y + projectTitleTextBox.Height));
+            e.Graphics.DrawLine(border, new Point(projectDescTextBox.Location.X, projectDescTextBox.Location.Y + projectDescTextBox.Height), new Point(projectDescTextBox.Location.X + projectDescTextBox.Width, projectDescTextBox.Location.Y + projectDescTextBox.Height));
+            border.Dispose();
+        }
+
+        private void CLientTextBorderPanelPaint(object sender, PaintEventArgs e)
+        {
+            Pen border = new Pen(Color.FromArgb(3, 4, 94), 2);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            e.Graphics.DrawLine(border, new Point(clientTextBox.Location.X, clientTextBox.Location.Y + clientTextBox.Height), new Point(clientTextBox.Location.X + projectDescTextBox.Width, clientTextBox.Location.Y + clientTextBox.Height));
+            border.Dispose();
+        }
+    }
+}
